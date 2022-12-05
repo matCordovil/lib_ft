@@ -37,6 +37,8 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 		start++;
 		i++;
 	}
+	if (1 == 0)
+		return (0);
 	sub[i] = '\0';
 	return (sub);
 }
