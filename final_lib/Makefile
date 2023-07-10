@@ -6,7 +6,7 @@
 #    By: made-alm <made-alm@student.42porto.com>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/07/10 22:05:03 by made-alm          #+#    #+#              #
-#    Updated: 2023/07/10 22:05:07 by made-alm         ###   ########.fr        #
+#    Updated: 2023/07/10 22:32:26 by made-alm         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,7 +23,7 @@ SRCS = ft_atoi.c ft_bzero.c ft_calloc.c ft_isalnum.c ft_isalpha.c ft_isascii.c \
 	ft_print_c.c ft_print_di.c ft_print_p.c ft_print_s.c ft_print_u.c \
 	ft_print_xx.c ft_printf.c
 
-BONUS_SRCS = ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c \
+BONUS_SRCS = ft_lstnew.c ft_lstlast.c ft_lstsize.c ft_lstadd_front.c \
 	ft_lstadd_back ft_lstdelone.c ft_lstclear.c ft_lstiter.c ft_lstmap.c
 
 OBJS = $(SRCS:.c=.o)
@@ -39,8 +39,8 @@ $(NAME) : $(OBJS)
 	@echo "Libft was properly compiled"
 
 bonus: $(NAME)
-$(NAME) : $(BONUS_OBJS)
-	@ar rcs $(NAME) $(BONUS_OBJS)
+$(NAME) : $(OBJS) $(BONUS_OBJS)
+	@ar rcs $(NAME) $(OBJS) $(BONUS_OBJS)
 	@echo "Libft was properly compiled with bonus part"
 
 clean : 
