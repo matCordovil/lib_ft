@@ -1,21 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd_front.c                                  :+:      :+:    :+:   */
+/*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: made-alm <made-alm@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/10 22:02:04 by made-alm          #+#    #+#             */
-/*   Updated: 2023/07/10 22:02:10 by made-alm         ###   ########.fr       */
+/*   Created: 2023/07/10 22:01:32 by made-alm          #+#    #+#             */
+/*   Updated: 2023/07/10 22:01:50 by made-alm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstadd_front(t_list **lst, t_list *new)
+void	ft_lstadd_back(t_list **lst, t_list *new)
 {
-	if (!lst || !new)
+	t_list	*current_last;
+
+	if(!lst || !new)
 		return;
-	new->next = *lst;
-	*lst = new;
+	if (!(*lst))
+	{
+		*lst = new;
+		new->next = NULL;
+		return;
+	}
+	current_last = ft_lstlast(*lst);
+	current_last->next = new;
+	new->next = NULL;
 }

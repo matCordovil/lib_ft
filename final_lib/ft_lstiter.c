@@ -1,21 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd_front.c                                  :+:      :+:    :+:   */
+/*   ft_lstiter.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: made-alm <made-alm@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/10 22:02:04 by made-alm          #+#    #+#             */
-/*   Updated: 2023/07/10 22:02:10 by made-alm         ###   ########.fr       */
+/*   Created: 2023/07/10 22:02:57 by made-alm          #+#    #+#             */
+/*   Updated: 2023/07/10 22:02:59 by made-alm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstadd_front(t_list **lst, t_list *new)
+void	ft_lstiter(t_list *lst, void (*f)(void*))
 {
-	if (!lst || !new)
-		return;
-	new->next = *lst;
-	*lst = new;
+	if(!lst || !f)
+		return ;
+	while (lst)
+	{
+		f(lst->content);
+		lst = lst->next;
+	}
 }
