@@ -6,7 +6,7 @@
 #    By: made-alm <made-alm@student.42porto.com>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/07/10 22:05:03 by made-alm          #+#    #+#              #
-#    Updated: 2023/07/13 19:31:26 by made-alm         ###   ########.fr        #
+#    Updated: 2023/07/13 20:32:23 by made-alm         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -38,8 +38,7 @@ $(NAME) : $(OBJS)
 	@ar rcs $(NAME) $(OBJS)
 	@echo "Libft was properly compiled"
 
-bonus: $(NAME)
-$(NAME) : $(OBJS) $(BONUS_OBJS)
+bonus: $(NAME) $(BONUS_OBJS)
 	@ar rcs $(NAME) $(OBJS) $(BONUS_OBJS)
 	@echo "Libft was properly compiled with bonus part"
 
@@ -53,8 +52,8 @@ fclean : clean
 
 re: fclean all
 
-.DEFAULT_GOAL := all
-
 .PHONY: all, bonus, clean, fclean, re
 
 .SILENT:
+
+.DEFAULT_GOAL := all
