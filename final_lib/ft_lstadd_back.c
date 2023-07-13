@@ -6,7 +6,7 @@
 /*   By: made-alm <made-alm@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/10 22:01:32 by made-alm          #+#    #+#             */
-/*   Updated: 2023/07/10 22:01:50 by made-alm         ###   ########.fr       */
+/*   Updated: 2023/07/13 19:23:43 by made-alm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,12 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 	t_list	*current_last;
 
 	if(!lst || !new)
-		return;
+		return ;
 	if (!(*lst))
 	{
 		*lst = new;
 		new->next = NULL;
-		return;
+		return ;
 	}
 	current_last = ft_lstlast(*lst);
 	current_last->next = new;

@@ -6,7 +6,7 @@
 /*   By: made-alm <made-alm@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/10 22:03:22 by made-alm          #+#    #+#             */
-/*   Updated: 2023/07/10 22:03:25 by made-alm         ###   ########.fr       */
+/*   Updated: 2023/07/13 19:32:32 by made-alm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void*), void (*del)(void*))
 	new_lst = NULL;
 	while (lst)
 	{
-		node = ft_lstnew(f(lst->content))
+		node = ft_lstnew(f(lst->content));
 		if (!node)
 		{
 			ft_lstclear(&new_lst, del);
