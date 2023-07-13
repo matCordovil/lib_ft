@@ -6,7 +6,7 @@
 #    By: made-alm <made-alm@student.42porto.com>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/07/10 22:05:03 by made-alm          #+#    #+#              #
-#    Updated: 2023/07/13 20:32:23 by made-alm         ###   ########.fr        #
+#    Updated: 2023/07/13 20:44:18 by made-alm         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -40,17 +40,20 @@ $(NAME) : $(OBJS)
 
 bonus: $(NAME) $(BONUS_OBJS)
 	@ar rcs $(NAME) $(OBJS) $(BONUS_OBJS)
-	@echo "Libft was properly compiled with bonus part"
+	@echo "Bonus part was properly compiled"
 
 clean : 
 	@$(RM) $(OBJS) $(BONUS_OBJS)
-	@echo "Minor Libft cleanse done"
+	@echo "Minor cleanse done"
 
-fclean : clean
+fclean :
+	@$(RM) $(OBJS) $(BONUS_OBJS)
 	@$(RM) $(NAME)
-	@echo "Super Libft cleanse done"
+	@echo "Super cleanse done"
 
 re: fclean all
+
+rebonus: fclean bonus
 
 .PHONY: all, bonus, clean, fclean, re
 
