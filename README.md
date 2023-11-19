@@ -1,4 +1,4 @@
-# core_cursus_projs
+# My first Library in C
 
 This project is meant to teach us how a library works and how we can make our own.
 
