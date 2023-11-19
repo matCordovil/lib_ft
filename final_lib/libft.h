@@ -69,12 +69,5 @@ void	ft_lstdelone(t_list *lst, void (*del)(void*));
 void	ft_lstclear(t_list **lst, void (*del)(void*));
 void	ft_lstiter(t_list *lst, void (*f)(void*));
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void*), void (*del)(void*));
-int		ft_print_c(char c);
-int		ft_print_s(char *s);
-int		ft_print_p(unsigned long long p);
-int		ft_print_di(int n);
-int		ft_print_u(unsigned int n, int l);
-int		ft_print_xx(unsigned long long n, char formspec, int l);
-int		ft_printf(const char *formspec, ...);
 
 #endif
